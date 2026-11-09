@@ -38,7 +38,10 @@ esac
 export MACOSX_DEPLOYMENT_TARGET=11.0
 IDENTITY="${MACOS_SIGN_IDENTITY:--}"
 SHORT_VERSION="${VERSION%%-*}"
-WORK="$CARGO_TARGET_DIR/macos-package"
+# Stage outside synced source/build folders: file providers can reattach FinderInfo
+# after signing and invalidate an otherwise intact app bundle.
+WORK="$(mktemp -d "${TMPDIR:-/tmp}/aevum-package.XXXXXX")"
+trap 'rm -rf "$WORK"' EXIT
 APP="$WORK/Aevum.app"
 DMG="$DIST/aevum-$VERSION-macos-$ARCH.dmg"
 CLI_ZIP="$DIST/aevum-cli-$VERSION-macos-$ARCH.zip"
