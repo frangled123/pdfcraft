@@ -209,9 +209,9 @@ pub(super) fn scan_tab(
     photo_texture: &mut Option<(u64, egui::TextureHandle)>,
 ) -> bool {
     ui.label(
-        egui::RichText::new(tl!(
+        egui::RichText::new(crate::branding::text(tl!(
             "Sign a sheet of white paper and take a photo of it in bright, even light (use the flash). Choose the photo or drop it here: PdfCraft finds the signature and removes the paper."
-        ))
+        )).as_ref())
         .color(t.text_muted),
     );
     let mut browse = false;

@@ -1,18 +1,23 @@
+> **Aevum — independent macOS ARM fork maintained by [frangled123](https://github.com/frangled123).**
+> Native Apple Silicon builds, original ribbon branding, and system light/dark/tinted icons.
+> See [local build and upstream-sync instructions](docs/macos-arm-fork.md).
+> The documentation below also describes upstream features and releases; this fork is not an official ArtCraft release.
+
 <p align="center">
-  <a href="https://getartcraft.com/">
+  <a href="https://github.com/frangled123/pdfcraft">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
+      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/ribbon-mark-dark.svg">
+      <img alt="Independent ribbon suite" src="docs/brand/ribbon-mark-light.svg" width="88">
     </picture>
   </a>
 </p>
 
 
 <p align="center">
-  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.pdfcraft.png" width="128" height="128" alt="PdfCraft icon: an engraved lion on a red tile">
+  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.pdfcraft.png" width="128" height="128" alt="Aevum ribbon app icon">
 </p>
 
-<h1 align="center">PdfCraft</h1>
+<h1 align="center">Aevum</h1>
 
 <p align="center">
   <b>The PDF workbench; an open-source, modern PDF reader and editor, built in pure Rust.</b><br>
@@ -614,14 +619,11 @@ with its author, source and license in [ATTRIBUTION.md](ATTRIBUTION.md). Release
 the Japanese fonts of [craft-fonts](https://github.com/storytold/craft-fonts/blob/main/ATTRIBUTION.md)
 (SIL Open Font License 1.1).
 
-The ArtCraft name, wordmark and logos in [`docs/brand/`](docs/brand/) are trademarks of the
-ArtCraft Team and are not covered by this license. They may be used only unmodified, and only as
-part of this repository and PdfCraft, under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt).
-Forks and modified versions must remove them.
+The restricted upstream ArtCraft graphics have been removed from this fork. The original ribbon artwork in `docs/brand/` and `assets/app-icon/` is MIT OR Apache-2.0; see [its licence](docs/brand/LICENSE-ribbon.txt). Original code and contributor notices remain intact.
 
 <p align="center">
-  <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
-  <sub>Made by the <a href="https://getartcraft.com/">ArtCraft</a> team and community.</sub>
+  <a href="https://github.com/frangled123/pdfcraft"><img alt="Independent ribbon suite" src="docs/brand/ribbon-mark-light.svg" width="28"></a><br>
+  <sub>Based on the upstream project by the ArtCraft team and community; this fork is independently maintained.</sub>
 </p>
 
 The Tools panel sits on the left, or on the right with Preferences ▸ Tools panel side. The rail stays at the right edge and opens one side panel beside it. Drag a panel's inner edge to resize it; widths are remembered. F4 shows or hides the side panel and Shift+F4 the Tools panel (also in the View menu); View ▸ Reset side panels restores the default arrangement.

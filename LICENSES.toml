@@ -16,7 +16,7 @@ sha256 = "cd7032ea33b71427f188e34ffb4aee9d6868a57fd196037c5c8b2be03a2a0352"
 [[document]]
 source = "NOTICE"
 destination = "NOTICE"
-sha256 = "d9ba162ad2bc95d22ab9885065e253bb823bd6795068828e7b39858344b660eb"
+sha256 = "01bb55f6163218ae10a026ae73b3d026ff7a5a1145ebfda40ec5a469dc431990"
 
 [[document]]
 source = "assets/app-icon/LICENSE-document.txt"
@@ -26,7 +26,7 @@ sha256 = "64a3137e3d5cc41e5b78d2ad8dd9ddddd6588283f9f7b3128aa6a8a50852fb9a"
 [[document]]
 source = "assets/app-icon/LICENSE.txt"
 destination = "assets/app-icon/LICENSE.txt"
-sha256 = "b768acafe6cbad8247eedf86b5b5381feefcd4ee0f8c7808b86811bc687cf37b"
+sha256 = "98bca7a0775ca4809c579e78e640095cf7fe4bee3e95c7bde51c9f71268b1c69"
 
 [[document]]
 source = "assets/fonts/OFL-DancingScript.txt"
@@ -177,3 +177,8 @@ crate = "icu_segmenter_data"
 path = "data/segmenter_dictionary_extended_v1.rs.data"
 licence = "Unicode-3.0"
 documents = ["licenses/ICU4X-LICENSE.txt"]
+
+[[document]]
+source = "docs/brand/LICENSE-ribbon.txt"
+destination = "docs/brand/LICENSE-ribbon.txt"
+sha256 = "98bca7a0775ca4809c579e78e640095cf7fe4bee3e95c7bde51c9f71268b1c69"

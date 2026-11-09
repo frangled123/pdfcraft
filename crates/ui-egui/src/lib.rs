@@ -13,8 +13,13 @@
 /// prompt shows both, and an AppImage's menu entry gets the icon.
 #[cfg(not(target_arch = "wasm32"))]
 pub const UPDATE_APP: craft_update::app::App = craft_update::app::App {
+    repo: "frangled123/pdfcraft",
+    name: "Aevum",
+    former_names: &["PdfCraft", "PrintCraft"],
+    former_ids: &["aevum", "printcraft"],
+    developer: "frangled123 (independent fork)",
     icon_png: Some(include_bytes!("../../../assets/app-icon/hicolor/128x128/apps/ai.storyteller.pdfcraft.png")),
-    accent: Some([0xb7, 0x02, 0x28]),
+    accent: Some([0xed, 0x60, 0x4c]),
     ..craft_update::suite::PDFCRAFT
 };
 
@@ -34,6 +39,7 @@ macro_rules! tl_ctx {
         $crate::i18n::tr_ctx($crate::i18n::current(), $context, $s)
     };
 }
+pub mod branding;
 pub mod canvas;
 mod chrome;
 mod image_engine;

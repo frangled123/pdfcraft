@@ -1092,9 +1092,9 @@ fn preferences_menu_and_shortcut_allow_switching_interface_languages() {
             n.role() == egui::accesskit::Role::MenuItem && n.label().is_some_and(|l| l.starts_with(text))
         }
     };
-    h.get_by(menu_row("編集")).click();
+    h.get_by(menu_row(if cfg!(target_os = "macos") { "Aevum" } else { "編集" })).click();
     h.run_steps(2);
-    h.get_by(menu_row("環境設定")).click();
+    h.get_by(menu_row(if cfg!(target_os = "macos") { "設定" } else { "環境設定" })).click();
     h.run_steps(2);
     for (current, next, code) in [("日本語", "English", "en"), ("English", "Українська", "uk"), ("Українська", "日本語", "ja")]
     {

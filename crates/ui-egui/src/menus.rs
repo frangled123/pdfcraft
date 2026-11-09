@@ -21,7 +21,7 @@ use crate::{PdfCraftApp, RightPanel};
 pub(super) mod tab_context;
 
 /// The app's name in the menus the layouts write (About, Hide, Quit).
-pub(crate) const APP_NAME: &str = "PdfCraft";
+pub(crate) const APP_NAME: &str = "Aevum";
 
 /// The top bar's width after the menus: the mode tabs, the search box and the buttons.
 const ROW_AFTER_MENUS: f32 = 720.0;
@@ -267,7 +267,7 @@ fn translate(english: &'static str) -> String {
     if english == "\u{22ef}" {
         return "…".to_owned();
     }
-    tl!(english).to_owned()
+    crate::branding::text(tl!(english)).into_owned()
 }
 
 /// The layouts' own labels (About, Quit, Window…) through the app's translations.
@@ -395,6 +395,7 @@ impl PdfCraftApp {
                 None => (id.to_owned(), None),
             },
         };
+        let english = if id == "help.about" { crate::branding::text(&english).into_owned() } else { english };
         let mut item = Item::new(id, label.map_or(english, str::to_owned));
         if let Some(c) = shortcut.and_then(chord) {
             item = item.shortcut(c);

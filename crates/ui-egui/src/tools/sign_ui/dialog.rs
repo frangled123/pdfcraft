@@ -451,9 +451,9 @@ fn sign_as(ui: &mut egui::Ui, app: &mut PdfCraftApp, t: &Tokens) -> bool {
             ui.label("");
             ui.label(
                 egui::RichText::new(if entry.path.starts_with("windows:") {
-                    tl!("The key is in the Windows certificate store, which may ask to allow PdfCraft to use it.")
+                    crate::branding::text(tl!("The key is in the Windows certificate store, which may ask to allow PdfCraft to use it.")).into_owned()
                 } else {
-                    tl!("The key is in the macOS Keychain, which may ask to allow PdfCraft to use it.")
+                    crate::branding::text(tl!("The key is in the macOS Keychain, which may ask to allow PdfCraft to use it.")).into_owned()
                 })
                 .small()
                 .color(t.text_muted),

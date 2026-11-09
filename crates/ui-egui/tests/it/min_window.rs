@@ -26,7 +26,12 @@ fn at_the_minimum_width_the_modes_fold_into_a_menu_and_search_stays() {
     h.get_by_role_and_label(Role::Button, "E-Sign").click();
     h.run_steps(4);
     assert!(h.query_by_role_and_label(Role::Button, "E-Sign").is_some(), "the menu button is named after the mode");
-    assert!(h.query_by_role_and_label(Role::MenuItem, "File").is_some(), "main menu reachable");
+    // macOS has an extra application menu; its narrow layout may collapse all titles.
+    if h.query_by_role_and_label(Role::MenuItem, "File").is_none() {
+        h.get_by_role_and_label(Role::MenuItem, "Menu").click();
+        h.run_steps(4);
+    }
+    h.get_by_role_and_label(Role::MenuItem, "File");
 }
 
 #[test]
