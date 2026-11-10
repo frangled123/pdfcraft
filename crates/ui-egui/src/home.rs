@@ -94,8 +94,11 @@ pub fn show(app: &mut PdfCraftApp, ui: &mut egui::Ui) {
                         ui.horizontal(|ui| {
                             widgets::suite_mark(ui, 28.0);
                             ui.vertical(|ui| {
-                                ui.label(egui::RichText::new(tl!("Independent macOS ARM fork")).font(theme::semibold(15.0)));
-                                ui.label(egui::RichText::new(tl!("Fork source and upstream project resources.")).color(t.text_muted));
+                                ui.label(egui::RichText::new(crate::branding::fork_label("Independent macOS ARM fork")).font(theme::semibold(15.0)));
+                                ui.label(
+                                    egui::RichText::new(crate::branding::fork_label("Fork source and upstream project resources."))
+                                        .color(t.text_muted),
+                                );
                             });
                             // Closed for this run only: the card is back on the next launch.
                             ui.with_layout(egui::Layout::right_to_left(egui::Align::Min), |ui| {

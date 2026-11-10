@@ -30,9 +30,9 @@ fn discord_button_in_the_top_bar_opens_discord() {
 fn home_screen_links() {
     for (label, url) in [
         ("Upstream community", links::DISCORD),
-        ("PdfCraft web page", "https://getartcraft.com/apps/pdfcraft"),
-        ("PdfCraft on GitHub", "https://github.com/frangled123/pdfcraft"),
-        ("ArtCraft website", "https://getartcraft.com"),
+        ("Upstream PdfCraft website", "https://getartcraft.com/apps/pdfcraft"),
+        ("Aevum source code", "https://github.com/frangled123/pdfcraft"),
+        ("Upstream ArtCraft website", "https://getartcraft.com"),
     ] {
         let mut h = harness(|_| {});
         h.get_by_label("Independent macOS ARM fork");
@@ -112,4 +112,20 @@ fn about_dialog_has_contributors_and_models_tabs() {
     settled(&mut h, "Models").click();
     h.run_steps(4);
     assert!(h.query_all_by_label("Anthropic").count() >= 1);
+}
+
+#[test]
+fn chinese_home_links_distinguish_fork_from_upstream() {
+    for (language, own, upstream) in [("zh-hans", "Aevum 源代码", "上游 PdfCraft 网站"), ("zh-hant", "Aevum 原始碼", "上游 PdfCraft 網站")]
+    {
+        let mut h = harness(move |app| {
+            app.set_option("language", language).unwrap();
+        });
+        h.get_by_label(own).click();
+        h.run_steps(2);
+        assert_eq!(h.state().last_opened_url.as_deref(), Some(links::GITHUB));
+        h.get_by_label(upstream).click();
+        h.run_steps(2);
+        assert_eq!(h.state().last_opened_url.as_deref(), Some(links::APP_PAGE));
+    }
 }

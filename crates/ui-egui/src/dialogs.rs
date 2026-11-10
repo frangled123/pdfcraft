@@ -1604,7 +1604,7 @@ fn dialog_about(ui: &mut egui::Ui, req: &mut Pending) -> bool {
             );
             ui.add_space(12.0);
             ui.horizontal(|ui| {
-                ui.label(egui::RichText::new(tl!("Independent macOS ARM build")).color(t.text_muted));
+                ui.label(egui::RichText::new(crate::branding::fork_label("Independent macOS ARM build")).color(t.text_muted));
                 widgets::suite_mark(ui, 16.0);
             });
             ui.add_space(6.0);

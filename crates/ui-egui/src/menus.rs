@@ -395,7 +395,7 @@ impl PdfCraftApp {
                 None => (id.to_owned(), None),
             },
         };
-        let english = if id == "help.about" { crate::branding::text(&english).into_owned() } else { english };
+        let english = crate::branding::menu_text(id, &english).into_owned();
         let mut item = Item::new(id, label.map_or(english, str::to_owned));
         if let Some(c) = shortcut.and_then(chord) {
             item = item.shortcut(c);
