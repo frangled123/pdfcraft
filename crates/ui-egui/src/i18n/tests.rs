@@ -131,9 +131,12 @@ fn locale_variables_pick_the_language_with_pdfcraft_mappings() {
     assert_eq!(env_lang(env(&[("LANG", "no_NO.UTF-8")])), nb);
     assert_eq!(env_lang(env(&[("LC_ALL", "pt_PT.UTF-8"), ("LANG", "ja_JP.UTF-8")])), Lang::from_code("pt-br"));
     assert_eq!(env_lang(env(&[("LC_ALL", "xx_YY.UTF-8"), ("LC_MESSAGES", "zh_HK.UTF-8")])), Lang::from_code("zh-hant"));
-    if cfg!(not(target_os = "windows")) {
-        // Outside Windows a neutral locale means English and ends the search.
+    if cfg!(not(any(target_os = "windows", target_os = "macos"))) {
+        // On other Unix desktops a neutral locale means English and ends the search.
         assert_eq!(env_lang(env(&[("LC_ALL", "C"), ("LANG", "ja_JP.UTF-8")])), Some(Lang::EN));
+    } else {
+        assert_eq!(env_lang(env(&[("LC_ALL", "C"), ("LANG", "ja_JP.UTF-8")])), Some(JA()));
+        assert_eq!(env_lang(env(&[("LC_ALL", "C.UTF-8"), ("LANG", "C.UTF-8")])), None);
     }
 }
 
@@ -185,7 +188,7 @@ fn windows_display_language_resolves_chinese_scripts() {
     assert_eq!(first_supported("no-NO\r\nen-US\r\n"), Lang::from_code("nb"));
 }
 
-#[cfg(target_os = "windows")]
+#[cfg(any(target_os = "windows", target_os = "macos"))]
 #[test]
 fn neutral_locale_does_not_override_display_language() {
     needs_catalogs!();

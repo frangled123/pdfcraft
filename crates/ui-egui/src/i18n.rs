@@ -422,12 +422,12 @@ fn env_lang(var: impl Fn(&str) -> Option<String>) -> Option<Lang> {
     ["LC_ALL", "LC_MESSAGES", "LANG"].into_iter().find_map(|name| var(name).and_then(|v| language_override(&v)))
 }
 
-/// A named locale can override the display language. On Windows, the neutral
+/// A named locale can override the display language. On macOS and Windows, a neutral
 /// C/POSIX locale inherited from a launcher says nothing about the user's UI language.
 #[cfg(not(target_arch = "wasm32"))]
 fn language_override(tag: &str) -> Option<Lang> {
     let tag = tag.trim();
-    if cfg!(target_os = "windows") && matches!(candidates(tag).first().map(String::as_str), Some("c" | "posix")) {
+    if cfg!(any(target_os = "windows", target_os = "macos")) && matches!(candidates(tag).first().map(String::as_str), Some("c" | "posix")) {
         return None;
     }
     lang_from_tag(tag)
