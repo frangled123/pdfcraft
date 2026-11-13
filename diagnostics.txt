@@ -1,0 +1,207 @@
+fork-public-build.log
+   Compiling craft-menu v0.1.0 (https://github.com/storytold/craft-libs?rev=787a7a0f972fd1d7a7618fdbeca3a5267a0407ff#787a7a0f)
+   Compiling pdfcraft-ui-egui v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/ui-egui)
+   Compiling rfd v0.17.2
+   Compiling pdfcraft v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/apps/pdfcraft)
+   Compiling pdfcraft-cli v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/apps/pdfcraft-cli)
+   Compiling pdfcraft-automation v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/automation)
+   Compiling fmv-macos-events v0.1.0
+    Finished `release` profile [optimized] target(s) in 5m 45s
+Non-fat file: /var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/bin/pdfcraft is architecture: arm64
+Non-fat file: /var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/bin/pdfcraft-cli is architecture: arm64
+==> assembling /var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/Aevum.app
+warning: patch `egui_demo_lib v0.37.0 (https://github.com/storytold/egui.git?rev=725a39fca940f77149ffbb9c58eef405a16997bc#725a39fc)` was not used in the crate graph
+warning: patch `egui_inspection v0.37.0 (https://github.com/storytold/egui.git?rev=725a39fca940f77149ffbb9c58eef405a16997bc#725a39fc)` was not used in the crate graph
+warning: patch `egui_system_font_provider v0.37.0 (https://github.com/storytold/egui.git?rev=725a39fca940f77149ffbb9c58eef405a16997bc#725a39fc)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+    Finished `dev` profile [optimized + debuginfo] target(s) in 2.14s
+     Running `target/debug/xtask models /var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/aevum-package.dlIpLq/Aevum.app/Contents/Resources/models`
+assets: fetching https://ocrs-models.s3-accelerate.amazonaws.com/text-detection.onnx
+assets: fetching https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt
+assets: fetching https://ocrs-models.s3-accelerate.amazonaws.com/text-recognition.onnx
+assets: fetching https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt
+models: /var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/aevum-package.dlIpLq/Aevum.app/Contents/Resources/models/text-detection.onnx
+models: /var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/aevum-package.dlIpLq/Aevum.app/Contents/Resources/models/text-recognition.onnx
+OCR models in /var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/aevum-package.dlIpLq/Aevum.app/Contents/Resources/models:
+total 23952
+-rw-r--r--  1 runner  staff     1134 Nov 13 04:47 ATTRIBUTION.txt
+-rw-r--r--  1 runner  staff  2499479 Nov 13 04:47 text-detection.onnx
+-rw-r--r--  1 runner  staff    20138 Nov 13 04:47 text-detection.onnx.LICENCE.txt
+-rw-r--r--  1 runner  staff  9713177 Nov 13 04:47 text-recognition.onnx
+-rw-r--r--  1 runner  staff    20138 Nov 13 04:47 text-recognition.onnx.LICENCE.txt
+/* com.apple.actool.compilation-results */
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/tmp.h5aAe96O8F/Aevum.icns
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/tmp.h5aAe96O8F/Assets.car
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/tmp.h5aAe96O8F/icon-info.plist
+
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/Aevum.app/Contents/Info.plist: OK
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/Aevum.app/Contents/MacOS/Aevum: replacing existing signature
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/Aevum.app: replacing existing signature
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/Aevum.app: valid on disk
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/Aevum.app: satisfies its Designated Requirement
+==> building /Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-0.21.2-macos-aarch64.dmg
+created: /Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-0.21.2-macos-aarch64.dmg
+/Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-0.21.2-macos-aarch64.dmg: valid on disk
+/Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-0.21.2-macos-aarch64.dmg: satisfies its Designated Requirement
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/dmg-check/Aevum.app: valid on disk
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/dmg-check/Aevum.app: satisfies its Designated Requirement
+==> building /Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-cli-0.21.2-macos-aarch64.zip
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/aevum-cli-0.21.2-macos-aarch64/pdfcraft-cli: replacing existing signature
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/aevum-cli-0.21.2-macos-aarch64/pdfcraft-cli: valid on disk
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T//aevum-package.dlIpLq/aevum-cli-0.21.2-macos-aarch64/pdfcraft-cli: satisfies its Designated Requirement
+pdfcraft-cli 0.21.2
+Discord: https://discord.gg/artcraft  (help and feedback)
+Web:     https://getartcraft.com/apps/pdfcraft
+Source:  https://github.com/frangled123/pdfcraft
+==> done
+-rw-r--r--@ 1 runner  staff    74M Nov 13 04:47 /Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-0.21.2-macos-aarch64.dmg
+-rw-r--r--  1 runner  staff    58M Nov 13 04:47 /Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-cli-0.21.2-macos-aarch64.zip
+
+fork-public-inputs.log
+   Compiling aes v0.9.3
+   Compiling encoding_rs v0.8.42
+   Compiling sha2 v0.11.1
+   Compiling md-5 v0.11.0
+   Compiling zmij v1.0.23
+   Compiling alloc-no-stdlib v2.0.4
+   Compiling fearless_simd v0.4.1
+   Compiling hayro-ccitt v0.3.0
+   Compiling memchr v2.8.3
+   Compiling hayro-jbig2 v0.3.0 (/Users/runner/work/pdfcraft/pdfcraft/vendor/hayro-jbig2)
+   Compiling alloc-stdlib v0.2.4
+   Compiling chrono v0.4.45
+   Compiling chacha20 v0.10.2
+   Compiling fax v0.2.7
+   Compiling multiversion_no_op v1.0.0
+   Compiling zeroize v1.9.0
+   Compiling anyhow v1.0.104
+   Compiling simdutf8 v0.1.5
+   Compiling bitflags v2.13.2
+   Compiling scopeguard v1.2.0
+   Compiling itoa v1.0.18
+   Compiling hashbrown v0.17.1
+   Compiling serde v1.0.229
+   Compiling equivalent v1.0.2
+   Compiling either v1.18.0
+   Compiling serde_json v1.0.154
+   Compiling winnow v1.0.4
+   Compiling rayon v1.12.0
+   Compiling toml_parser v1.1.3+spec-1.1.0
+   Compiling indexmap v2.14.2
+   Compiling pdfcraft-crypt v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/crypt)
+   Compiling pdfcraft-filters v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/filters)
+   Compiling rand v0.10.3
+   Compiling brotli-decompressor v5.0.3
+   Compiling nom v8.0.0
+   Compiling serde_derive v1.0.229
+   Compiling serde_spanned v1.1.1
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling cbc v0.2.1
+   Compiling ecb v0.2.1
+   Compiling miniz_oxide v0.8.9
+   Compiling fdeflate v0.3.7
+   Compiling log v0.4.34
+   Compiling rangemap v1.8.0
+   Compiling weezl v0.2.1
+   Compiling toml_writer v1.1.2+spec-1.1.0
+   Compiling toml v1.1.6+spec-1.1.0
+   Compiling lopdf v0.45.0 (/Users/runner/work/pdfcraft/pdfcraft/vendor/lopdf)
+   Compiling png v0.18.1
+   Compiling pdfcraft-cos v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/cos)
+   Compiling pdfcraft-oracle v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/oracle)
+   Compiling xtask v0.1.0 (/Users/runner/work/pdfcraft/pdfcraft/xtask)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 4m 55s
+     Running `target/debug/xtask models`
+assets: fetching https://ocrs-models.s3-accelerate.amazonaws.com/text-detection.onnx
+assets: fetching https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt
+assets: fetching https://ocrs-models.s3-accelerate.amazonaws.com/text-recognition.onnx
+assets: fetching https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt
+models: /Users/runner/work/pdfcraft/pdfcraft/assets/models/text-detection.onnx
+models: /Users/runner/work/pdfcraft/pdfcraft/assets/models/text-recognition.onnx
+
+fork-public-packages.log
+/Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-0.21.2-macos-aarch64.dmg: valid on disk
+/Users/runner/work/pdfcraft/pdfcraft/dist/release/aevum-0.21.2-macos-aarch64.dmg: satisfies its Designated Requirement
+expected   CRC32 $1EA28B83
+/dev/disk31         	GUID_partition_scheme          	
+/dev/disk31s1       	Apple_HFS                      	/private/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/mount
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/mount/Aevum.app: valid on disk
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/mount/Aevum.app: satisfies its Designated Requirement
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/mount/Aevum.app/Contents/MacOS/Aevum: valid on disk
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/mount/Aevum.app/Contents/MacOS/Aevum: satisfies its Designated Requirement
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/Aevum.app: valid on disk
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/Aevum.app: satisfies its Designated Requirement
+"disk31" ejected.
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/cli/aevum-cli-0.21.2-macos-aarch64/pdfcraft-cli: valid on disk
+/var/folders/h5/t85nd63d71x27_8gl5gw3l_w0000gn/T/fork-verify-lbcn2bg7/cli/aevum-cli-0.21.2-macos-aarch64/pdfcraft-cli: satisfies its Designated Requirement
+aevum-0.21.2-macos-aarch64.dmg 77777217 aa574afea4e00145134caf4cfc057a4ff88f7cae4c1d5d8eae708900862b4556
+aevum-cli-0.21.2-macos-aarch64.zip 60559197 4eefb46629ecdd7b2a272f309a2cb10d1728fa9987ad6c29fc8128810baa8007
+Verified thin ARM executables, strict ad-hoc signatures, installed copy, version, icons, licences and hashes
+
+fork-public-release.log
+https://github.com/frangled123/pdfcraft/releases/tag/v0.21.2
+
+fork-public-translations.log
+warning: unused import: `std::ops::Deref`
+  --> vendor/hayro-interpret/src/font/mod.rs:27:5
+   |
+27 | use std::ops::Deref;
+   |     ^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `hayro-interpret` (lib) generated 1 warning
+   Compiling num_enum v0.7.6
+   Compiling pdfcraft-edit v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/edit)
+   Compiling pdfcraft-xfa v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/xfa)
+   Compiling rten-imageproc v0.26.0
+   Compiling pdfcraft-forms v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/forms)
+   Compiling crypto-primes v0.7.2
+   Compiling itertools v0.15.0
+   Compiling security-framework-sys v2.17.0
+   Compiling pic-scale v0.7.12
+   Compiling nom v8.0.0
+   Compiling boa_engine v0.22.0
+   Compiling craft-print v0.1.0 (https://github.com/storytold/craft-libs?rev=60ede99985ef1e5df87a2aca66ed538eb23dec99#60ede999)
+   Compiling lopdf v0.45.0 (/Users/runner/work/pdfcraft/pdfcraft/vendor/lopdf)
+   Compiling hayro v0.7.1 (/Users/runner/work/pdfcraft/pdfcraft/vendor/hayro)
+   Compiling security-framework v3.7.0
+   Compiling rsa v0.10.0-rc.18
+   Compiling ocrs v0.13.1
+   Compiling url v2.5.8
+   Compiling regex v1.13.1
+   Compiling p256 v0.14.0
+   Compiling p521 v0.14.0
+   Compiling bp384 v0.14.0
+   Compiling p384 v0.14.0
+   Compiling bp256 v0.14.0
+   Compiling thread-priority v3.1.1
+   Compiling craft-cms v0.1.0 (https://github.com/storytold/craft-libs?rev=60ede99985ef1e5df87a2aca66ed538eb23dec99#60ede999)
+   Compiling aho-corasick v1.1.5
+   Compiling pdfcraft-sign v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/sign)
+   Compiling pdfcraft-redact v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/redact)
+   Compiling pdfcraft-print v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/print)
+   Compiling pdfcraft-optimize v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/optimize)
+   Compiling pdfcraft-js v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/js)
+   Compiling pdfcraft-render v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/render)
+   Compiling pdfcraft-ocr v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/ocr)
+   Compiling pdfcraft-create v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/create)
+   Compiling pdfcraft-xfdf v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/xfdf)
+   Compiling pdfcraft-audit v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/audit)
+   Compiling pdfcraft-preflight v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/preflight)
+   Compiling pdfcraft-measure v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/measure)
+   Compiling pdfcraft-organize v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/organize)
+   Compiling pdfcraft-a11y v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/a11y)
+   Compiling pdfcraft-testkit v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/testkit)
+   Compiling pdfcraft-engine v0.21.2 (/Users/runner/work/pdfcraft/pdfcraft/crates/engine)
+    Finished `release` profile [optimized] target(s) in 7m 31s
+     Running unittests src/lib.rs (target/aarch64-apple-darwin/release/deps/pdfcraft_engine-68b76dd0fb58947f)
+
+running 1 test
+test tests::recognize_text_makes_a_scanned_page_searchable ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 776 filtered out; finished in 0.79s
+

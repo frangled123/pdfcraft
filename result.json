@@ -3,11 +3,52 @@
   "source_sha": "1078d0ec33c84613ccb66faaa8491a6e1ff0c059",
   "version": "0.21.2",
   "trigger": "refs/tags/fork-release/v0.21.2-attempt.1",
-  "status": "running",
+  "status": "success",
   "run_id": "43363612571",
   "run_attempt": "1",
   "run_url": "https://github.com/frangled123/pdfcraft/actions/runs/43363612571",
-  "updated_utc": "2026-11-13T04:09:42.474360+00:00",
-  "steps": {},
-  "assets": []
+  "updated_utc": "2026-11-13T04:48:19.226204+00:00",
+  "steps": {
+    "source": {
+      "outcome": "success",
+      "conclusion": "success"
+    },
+    "inputs": {
+      "outcome": "success",
+      "conclusion": "success"
+    },
+    "translations": {
+      "outcome": "success",
+      "conclusion": "success"
+    },
+    "build": {
+      "outcome": "success",
+      "conclusion": "success"
+    },
+    "packages": {
+      "outcome": "success",
+      "conclusion": "success"
+    },
+    "release": {
+      "outcome": "success",
+      "conclusion": "success"
+    }
+  },
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 198,
+      "sha256": "9e6f3327a5841403eefa3581206e99de317197bdc65922236d8c8336a0c22a5c"
+    },
+    {
+      "name": "aevum-0.21.2-macos-aarch64.dmg",
+      "size": 77777217,
+      "sha256": "aa574afea4e00145134caf4cfc057a4ff88f7cae4c1d5d8eae708900862b4556"
+    },
+    {
+      "name": "aevum-cli-0.21.2-macos-aarch64.zip",
+      "size": 60559197,
+      "sha256": "4eefb46629ecdd7b2a272f309a2cb10d1728fa9987ad6c29fc8128810baa8007"
+    }
+  ]
 }
