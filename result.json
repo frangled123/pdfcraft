@@ -1,0 +1,13 @@
+{
+  "repository": "frangled123/pdfcraft",
+  "source_sha": "1078d0ec33c84613ccb66faaa8491a6e1ff0c059",
+  "version": "0.21.2",
+  "trigger": "refs/tags/fork-release/v0.21.2-attempt.1",
+  "status": "running",
+  "run_id": "43363612571",
+  "run_attempt": "1",
+  "run_url": "https://github.com/frangled123/pdfcraft/actions/runs/43363612571",
+  "updated_utc": "2026-11-13T04:09:42.474360+00:00",
+  "steps": {},
+  "assets": []
+}
