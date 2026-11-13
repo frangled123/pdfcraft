@@ -18,6 +18,8 @@ use std::fmt::Write as _;
 
 use serde_json::Value;
 
+mod catalog_overrides;
+
 fn main() {
     let dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../contributors");
     let json = read(&dir.join("contributors.json"), "the About window shows no contributors", |t| {
@@ -64,6 +66,19 @@ fn craft_i18n() -> String {
     let mut o = String::from("/// (locale, shared catalog, PdfCraft's catalog), one entry per locale; `\"\"` for a missing file.\n");
     o.push_str("pub static CRAFT_I18N: &craft_i18n::Embedded = &[\n");
     for (code, shared, app) in entries {
+        let overlay = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("src/i18n/fork").join(format!("{code}.tsv"));
+        println!("cargo::rerun-if-changed={}", overlay.display());
+        let app = if overlay.is_file() {
+            match merged_catalog(&app, &overlay, &code) {
+                Ok(path) => path,
+                Err(error) => {
+                    println!("cargo::error=fork translation {code}: {error}");
+                    continue;
+                }
+            }
+        } else {
+            app
+        };
         // `{:?}` escapes the path (Windows backslashes) as a Rust string literal.
         let shared = shared.map_or_else(|| "\"\"".to_string(), |p| format!("include_str!({p:?})"));
         let _ = writeln!(o, "    ({code:?}, {shared}, include_str!({app:?})),");
@@ -184,4 +199,14 @@ fn generate(json: &Value, people: &toml::Table) -> String {
     }
     let _ = writeln!(o, "];");
     o
+}
+
+/// Write merged text into Cargo's generated-output directory, never into the pinned checkout.
+fn merged_catalog(app: &std::path::Path, overlay: &std::path::Path, code: &str) -> Result<std::path::PathBuf, String> {
+    let base = std::fs::read_to_string(app).map_err(|e| e.to_string())?;
+    let extra = std::fs::read_to_string(overlay).map_err(|e| e.to_string())?;
+    let text = catalog_overrides::merge(&base, &extra)?;
+    let output = std::path::PathBuf::from(std::env::var_os("OUT_DIR").ok_or("missing OUT_DIR")?).join(format!("fork-i18n-{code}.tsv"));
+    std::fs::write(&output, text).map_err(|e| e.to_string())?;
+    Ok(output)
 }

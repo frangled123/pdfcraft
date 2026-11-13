@@ -551,7 +551,8 @@ pub fn tr(lang: Lang, s: &str) -> &str {
 /// wording comes back as it stands, which is the English, so a catalog that is missing one is a
 /// sentence in English rather than a gap.
 pub fn words(wording: &str) -> String {
-    t(wording).to_owned()
+    // These are owned engine templates; document names are inserted by the caller afterwards.
+    crate::branding::text(t(wording)).into_owned()
 }
 
 /// Like [`tr`], for an English string that needs a disambiguating `context`.

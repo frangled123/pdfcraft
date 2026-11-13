@@ -1504,7 +1504,8 @@ fn english_keys() -> std::collections::BTreeSet<(String, String)> {
 /// plural and dynamically looked-up strings the scan can't see).
 #[test]
 fn translation_gaps_report() {
-    const SHOWN: usize = 3;
+    let full = std::env::var_os("CRAFT_I18N_REPORT_FULL").is_some();
+    let shown_count = if full { usize::MAX } else { 3 };
     if !catalogs_embedded() {
         println!("{REPORT_START}\nTranslation gaps: skipped, built without craft-i18n (set CRAFT_I18N_DIR to a craft-i18n checkout)\n{REPORT_END}");
         return;
@@ -1524,8 +1525,8 @@ fn translation_gaps_report() {
             .collect();
         let kept = keys.iter().filter(|(context, source)| context.is_empty() && found("", source).as_ref() == Some(source)).count();
         let mut line = format!("  {:<8} {:>5} missing, {kept:>4} kept in English", lang.code(), missing.len());
-        for (i, (context, source)) in missing.iter().take(SHOWN).enumerate() {
-            let mut shown: String = source.chars().take(48).collect();
+        for (i, (context, source)) in missing.iter().take(shown_count).enumerate() {
+            let mut shown: String = source.chars().take(if full { usize::MAX } else { 48 }).collect();
             if shown.len() < source.len() {
                 shown.push('…');
             }
@@ -1533,7 +1534,7 @@ fn translation_gaps_report() {
             line.push_str(if i == 0 { ": " } else { ", " });
             line.push_str(&key);
         }
-        if missing.len() > SHOWN {
+        if missing.len() > shown_count {
             line.push_str(", …");
         }
         report.push_str(&line);
@@ -1558,6 +1559,12 @@ fn date_languages_are_the_interface_languages() {
     let interface: Vec<(&str, &str)> = Lang::all().map(|l| (l.code(), l.name())).collect();
     let dates: Vec<(&str, &str)> = pdfcraft_engine::dates::DATE_LANGUAGES.iter().map(|l| (l.code, l.name)).collect();
     assert_eq!(dates, interface);
+}
+
+/// The stale-draft notice remains discoverable after the UI modules are reorganized.
+#[test]
+fn properties_stale_notice_is_in_translation_scan() {
+    assert!(ui_literals().contains("The document changed. Reopen Document Properties to edit the current version."));
 }
 
 /// A report, not a check: the notifications pasting an image and pinning a tool show, in each

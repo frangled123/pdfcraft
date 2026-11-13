@@ -86,4 +86,81 @@ mod tests {
         assert_eq!(text("About PdfCraft / VectorCraft"), "About Aevum / Nodus");
         assert!(matches!(text("Open…"), Cow::Borrowed(_)));
     }
+
+    #[test]
+    fn engine_wording_is_rebranded_before_document_values_are_inserted() {
+        let template = crate::i18n::words("PdfCraft could not open {file}");
+        assert_eq!(crate::i18n::fmt(&template, &[("file", "PdfCraft draft.pdf")]), "Aevum could not open PdfCraft draft.pdf");
+    }
+
+    #[test]
+    fn startup_notices_use_chinese_and_keep_user_filenames() {
+        let previous = crate::i18n::current();
+        for code in ["zh-hans", "zh-hant"] {
+            let Some(lang) = crate::i18n::Lang::from_code(code) else { continue };
+            crate::i18n::set_current(lang);
+            {
+                let mut app = crate::PdfCraftApp::new();
+                app.notify(crate::i18n::words(
+                    "PdfCraft is drawing without a graphics processor, so it may be slow. Updating the graphics driver may help.",
+                ));
+                let message = &app.toast.as_ref().unwrap().0;
+                assert!(message.starts_with("Aevum "), "{code}: {message}");
+                assert!(!message.contains("graphics processor"), "{code}: {message}");
+                app.notify_fmt("Couldn't open {name}: {reason}", &[("name", "PdfCraft draft.pdf"), ("reason", "OS error 13")]);
+                let message = &app.toast.as_ref().unwrap().0;
+                assert!(message.contains("PdfCraft draft.pdf"));
+                assert!(message.contains("OS error 13"));
+                assert!(!message.contains("Couldn't open"));
+            }
+        }
+        crate::i18n::set_current(previous);
+    }
+}
+
+#[cfg(test)]
+mod fork_catalog_tests {
+    #[test]
+    fn committed_chinese_rows_are_present_in_the_embedded_catalogs() {
+        for (code, catalog) in [("zh-hans", include_str!("i18n/fork/zh-hans.tsv")), ("zh-hant", include_str!("i18n/fork/zh-hant.tsv"))] {
+            let Some(lang) = crate::i18n::Lang::from_code(code) else {
+                assert_ne!(option_env!("CRAFT_I18N_REQUIRED"), Some("1"), "release catalog missing: {code}");
+                continue;
+            };
+            for row in catalog.lines().filter(|row| !row.is_empty() && !row.starts_with('#')) {
+                let fields: Vec<_> = row.split('\t').collect();
+                assert_eq!(fields.len(), 3);
+                let source = fields[1].replace("\\n", "\n").replace("\\t", "\t").replace("\\\\", "\\");
+                let translated = fields[2].replace("\\n", "\n").replace("\\t", "\t").replace("\\\\", "\\");
+                if fields[0] == "@plural" {
+                    let (one, other) = source.split_once('|').unwrap();
+                    for n in [0, 1, 2, 100] {
+                        assert_eq!(crate::i18n::trn(lang, n, one, other), translated.replace("{n}", &n.to_string()), "{code}: {source}");
+                    }
+                } else {
+                    assert_eq!(crate::i18n::tr_ctx(lang, fields[0], &source), translated, "{code}: {source}");
+                }
+            }
+        }
+    }
+}
+
+#[cfg(all(test, not(target_arch = "wasm32")))]
+mod fork_release_tests {
+    #[test]
+    fn updates_use_the_fork_and_accept_the_packaged_artifact_stem() {
+        let app = crate::UPDATE_APP;
+        assert_eq!(app.repo, "frangled123/pdfcraft");
+        assert_eq!(app.name, "Aevum");
+        assert!(app.stems().any(|stem| stem == "aevum"));
+        assert_eq!(app.bundle_id(), "ai.storyteller.pdfcraft");
+    }
+
+    #[test]
+    fn macos_declares_every_registered_interface_language() {
+        let plist = include_str!("../../../packaging/macos/Info.plist.in").to_lowercase();
+        for language in &crate::i18n::LANGUAGES {
+            assert!(plist.contains(&format!("<string>{}</string>", language.code)), "{}", language.code);
+        }
+    }
 }

@@ -101,7 +101,7 @@ impl PagePictures {
     pub(crate) fn get(&mut self, ctx: &egui::Context, doc: &pdfcraft_engine::Document, page: usize) -> Option<&[pdfcraft_engine::PagePicture]> {
         let key = (page, doc.edit_generation());
         self.poll();
-        if self.job.is_none() && !self.ready.as_ref().is_some_and(|(k, _)| *k == key) {
+        if self.job.is_none() && self.ready.as_ref().is_none_or(|(k, _)| *k != key) {
             match doc.page_pictures_job(page) {
                 Some(work) if doc.bytes.len() < Self::SMALL_FILE => self.ready = Some((key, work())),
                 Some(work) => self.start(ctx, key, work),
@@ -422,7 +422,7 @@ impl PdfCraftApp {
         if ctx.egui_wants_keyboard_input() {
             return;
         }
-        if ctx.input(|inp| inp.key_pressed(egui::Key::Escape)) {
+        if self.page_keys.pressed(ctx, egui::Key::Escape) {
             if let Some(view) = self.views.get_mut(i) {
                 view.picked_image = None;
                 view.pending_pick = None;
@@ -430,7 +430,7 @@ impl PdfCraftApp {
             return;
         }
         let Some(picked) = self.views.get(i).and_then(|v| v.picked_image) else { return };
-        let copy = ctx.input(|inp| inp.events.iter().any(|e| matches!(e, egui::Event::Copy)));
+        let copy = self.page_keys.clipboard(ctx).copy;
         if !copy || self.views[i].selected_text().is_some() {
             return;
         }

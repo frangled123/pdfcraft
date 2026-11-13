@@ -127,7 +127,7 @@ mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$WORK/bin/pdfcraft" "$APP/Contents/MacOS/Aevum"
 cp "$ROOT/assets/app-icon/pdfcraft.icns" "$APP/Contents/Resources/Aevum.icns"
 # Required embedded-font notices are independent of optional font inputs.
-cp "$ROOT/NOTICE" "$APP/Contents/Resources/NOTICE"
+copy_docs "$APP/Contents/Resources"
 # The standard About panel (Aevum menu > About Aevum) shows Credits.rtf under the version:
 # the website and Discord links the in-app About dialog has (#1287).
 cp "$HERE/Credits.rtf" "$APP/Contents/Resources/Credits.rtf"
@@ -217,6 +217,8 @@ CLI_DIR="$WORK/aevum-cli-$VERSION-macos-$ARCH"
 mkdir -p "$CLI_DIR"
 cp "$WORK/bin/pdfcraft-cli" "$CLI_DIR/"
 copy_docs "$CLI_DIR"
+# The headless OCR commands use the same verified models beside the CLI executable.
+ditto "$APP/Contents/Resources/models" "$CLI_DIR/models"
 sign --options runtime "$CLI_DIR/pdfcraft-cli"
 codesign --verify --strict --verbose=2 "$CLI_DIR/pdfcraft-cli"
 rm -f "$CLI_ZIP"

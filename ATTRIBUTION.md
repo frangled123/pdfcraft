@@ -4,7 +4,7 @@
 
 Every asset PdfCraft includes, bundles or uses to build its published material, with its author, source and licence. The policy is in [AGENTS.md](AGENTS.md) §1. The machine-readable list, with the SHA-256 of every asset, is [ATTRIBUTION.toml](ATTRIBUTION.toml). Licence texts are kept beside the assets and summarised in [NOTICE](NOTICE).
 
-## In this repository (261)
+## In this repository (263)
 
 | Asset | Title | Author | Licence | Source | Used for |
 |---|---|---|---|---|---|
@@ -269,6 +269,8 @@ Every asset PdfCraft includes, bundles or uses to build its published material, 
 | `docs/brand/ribbon-mark-light.svg` | Original ribbon ribbon-mark-light.svg | frangled123 | MIT OR Apache-2.0 | https://github.com/frangled123/pdfcraft/tree/macos-arm64 (ribbon v3, 2026-11-09) | Independent fork branding; light, dark and monochrome appearances |
 | `docs/brand/ribbon-mark-mono.png` | Original ribbon ribbon-mark-mono.png | frangled123 | MIT OR Apache-2.0 | https://github.com/frangled123/pdfcraft/tree/macos-arm64 (ribbon v3, 2026-11-09) | Independent fork branding; light, dark and monochrome appearances |
 | `docs/brand/ribbon-mark-mono.svg` | Original ribbon ribbon-mark-mono.svg | frangled123 | MIT OR Apache-2.0 | https://github.com/frangled123/pdfcraft/tree/macos-arm64 (ribbon v3, 2026-11-09) | Independent fork branding; light, dark and monochrome appearances |
+| `crates/ui-egui/src/i18n/fork/zh-hans.tsv` | Independent fork zh-hans UI translations | Independent fork contributors | MIT OR Apache-2.0 | this repository | Committed additions merged into the pinned craft-i18n app catalog at build time |
+| `crates/ui-egui/src/i18n/fork/zh-hant.tsv` | Independent fork zh-hant UI translations | Independent fork contributors | MIT OR Apache-2.0 | this repository | Committed additions merged into the pinned craft-i18n app catalog at build time |
 
 ## Compiled in through dependencies (7)
 
@@ -278,7 +280,7 @@ Every asset PdfCraft includes, bundles or uses to build its published material, 
 | `epaint_default_fonts` 0.37.0 | `fonts/Hack-Regular.ttf` | Hack Regular | Source Foundry Authors (derived from Bitstream Vera / DejaVu) | MIT AND Bitstream-Vera | https://github.com/source-foundry/Hack | egui fallback fonts (eframe feature default_fonts) |
 | `epaint_default_fonts` 0.37.0 | `fonts/NotoEmoji-Regular.ttf` | Noto Emoji (monochrome) | Google Inc. | OFL-1.1 | https://github.com/googlefonts/noto-emoji | egui monochrome fallback font (egui feature monochrome_emoji_fonts) |
 | `epaint_default_fonts` 0.37.0 | `fonts/emoji-icon-font.ttf` | emoji-icon-font | John Slegers | MIT | https://github.com/jslegers/emoji-icon-font | egui monochrome fallback font (egui feature monochrome_emoji_fonts) |
-| `epaint_default_fonts` 0.37.0 | `fonts/egui-icons.ttf` | egui icons (monochrome emoji-icon-font subset) | John Slegers | MIT | https://github.com/jslegers/emoji-icon-font | Small special-icon subset embedded by egui default_fonts; retained in FontDefinitions::default(). Provenance: https://github.com/storytold/egui/blob/6d518fc799681571963842f95b55a6b68431b15a/crates/epaint_default_fonts/fonts/egui-icons.txt; complete MIT copyright and permission text in NOTICE. |
+| `epaint_default_fonts` 0.37.0 | `fonts/egui-icons.ttf` | egui icons (monochrome emoji-icon-font subset) | John Slegers | MIT | https://github.com/jslegers/emoji-icon-font | Small special-icon subset embedded by egui default_fonts; retained in FontDefinitions::default(). Provenance: https://github.com/storytold/egui/blob/725a39fca940f77149ffbb9c58eef405a16997bc/crates/epaint_default_fonts/fonts/egui-icons.txt; complete MIT copyright and permission text in NOTICE. |
 | `hayro-interpret` 0.7.0 | `src/font/generated/metrics.rs` | Standard-14 font metrics and encodings (as Rust tables) (non-visual data, AGENTS.md §1.1) | Adobe (Core 14 AFM metrics, PDF specification encodings); tables by The Hayro Authors | MIT OR Apache-2.0 | ISO 32000-2 Annex D; Adobe Core14 AFM files (via vendored hayro-interpret) | Glyph widths and encodings for non-embedded standard fonts. Non-visual data, allowed by AGENTS.md §1.1 |
 | `icu_segmenter_data` 2.3.0 | `data/segmenter_dictionary_extended_v1.rs.data` | Southeast Asian word dictionaries for line breaking (Thai, Lao, Khmer, Burmese) | The ICU4X Project Developers; word lists from the ICU project (Unicode, Inc.) | Unicode-3.0 | https://github.com/unicode-org/icu4x (via icu_segmenter_data) | Word boundaries for wrapping Thai text in Edit text and Add text (crates/edit/src/linebreak.rs). Non-visual data; the line segmenter loads only these dictionaries, not the Chinese and Japanese one |
 

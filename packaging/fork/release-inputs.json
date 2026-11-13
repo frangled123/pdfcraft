@@ -1,0 +1,163 @@
+{
+  "repository": "frangled123/pdfcraft",
+  "command": "pdfcraft",
+  "app": "Aevum",
+  "version": "0.21.2",
+  "baseline": "7d57850ba6267d19b92c9f85673bd06dbbef6a94",
+  "upstream": "175992b5a2045d00cdf8a20f812ea4aac522b099",
+  "rust": "1.95.0",
+  "fonts": "b076417b5880bd4154bd22f00695b1d28c6bea83",
+  "i18n": "575cfdef63227b14daf173b8cc87928bfdfa325e",
+  "artwork": [
+    {
+      "path": "assets/app-icon/Aevum.icon/Assets/ribbon-dark.svg",
+      "mode": "100644",
+      "sha": "86cc2eb69a6b5726dca4ca2d8896482a00189216"
+    },
+    {
+      "path": "assets/app-icon/Aevum.icon/Assets/ribbon-light.svg",
+      "mode": "100644",
+      "sha": "da2b2fa9801d305526747f5542fa02f9710024eb"
+    },
+    {
+      "path": "assets/app-icon/Aevum.icon/Assets/ribbon-mono.svg",
+      "mode": "100644",
+      "sha": "da236af268c238eff960e4711179cc29cb4c85d5"
+    },
+    {
+      "path": "assets/app-icon/Aevum.icon/icon.json",
+      "mode": "100644",
+      "sha": "08267763596ad28703a311f9d0f88b45afd39e29"
+    },
+    {
+      "path": "assets/app-icon/hicolor/128x128/apps/ai.storyteller.pdfcraft.png",
+      "mode": "100644",
+      "sha": "2baa86fbf3fa293984ffeb29b8bf4faa5b08a662"
+    },
+    {
+      "path": "assets/app-icon/hicolor/16x16/apps/ai.storyteller.pdfcraft.png",
+      "mode": "100644",
+      "sha": "d002817653b7d8cb4f1e962fad810c029f191a00"
+    },
+    {
+      "path": "assets/app-icon/hicolor/24x24/apps/ai.storyteller.pdfcraft.png",
+      "mode": "100644",
+      "sha": "889e01711ebc4859b9f57ed6584d5e572f56c0f6"
+    },
+    {
+      "path": "assets/app-icon/hicolor/256x256/apps/ai.storyteller.pdfcraft.png",
+      "mode": "100644",
+      "sha": "862486d3cd126732cd8176521c295e988a92e170"
+    },
+    {
+      "path": "assets/app-icon/hicolor/32x32/apps/ai.storyteller.pdfcraft.png",
+      "mode": "100644",
+      "sha": "1da226d4538b2955a67e7cffd9df1adad23af91e"
+    },
+    {
+      "path": "assets/app-icon/hicolor/48x48/apps/ai.storyteller.pdfcraft.png",
+      "mode": "100644",
+      "sha": "fa07486828898b15f6e6b95feee1220fc2aa7223"
+    },
+    {
+      "path": "assets/app-icon/hicolor/512x512/apps/ai.storyteller.pdfcraft.png",
+      "mode": "100644",
+      "sha": "91c3b86aeb7ee1b5efaac12c27c424d6be43a09d"
+    },
+    {
+      "path": "assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png",
+      "mode": "100644",
+      "sha": "5a29989b119fdeb210b746cd90ce1094ad36fecb"
+    },
+    {
+      "path": "assets/app-icon/hicolor/scalable/apps/ai.storyteller.pdfcraft.svg",
+      "mode": "100644",
+      "sha": "cfeb18025db7215d8873dfff38b51c0f6130fc5d"
+    },
+    {
+      "path": "assets/app-icon/pdfcraft-1024.png",
+      "mode": "100644",
+      "sha": "4ee9c81685ea4bb299582ee21f2a8fec948acc32"
+    },
+    {
+      "path": "assets/app-icon/pdfcraft-dark.svg",
+      "mode": "100644",
+      "sha": "cf5f1dd97708c26bae2fb6ffbf986a2d8351e7e1"
+    },
+    {
+      "path": "assets/app-icon/pdfcraft-document.ico",
+      "mode": "100644",
+      "sha": "ec1ea4568eb282f9d599343ba925284f704d301b"
+    },
+    {
+      "path": "assets/app-icon/pdfcraft-document.svg",
+      "mode": "100644",
+      "sha": "b9d2fbf3c96fba2e9bfd3bdfeb0a5dd1eac79f7a"
+    },
+    {
+      "path": "assets/app-icon/pdfcraft-small.svg",
+      "mode": "100644",
+      "sha": "cfeb18025db7215d8873dfff38b51c0f6130fc5d"
+    },
+    {
+      "path": "assets/app-icon/pdfcraft.icns",
+      "mode": "100644",
+      "sha": "95142b49f8a1601a353bbf22aef1dcf063674a15"
+    },
+    {
+      "path": "assets/app-icon/pdfcraft.ico",
+      "mode": "100644",
+      "sha": "588fc5b9cba73cd46a3aa305b033ff3cb06ad886"
+    },
+    {
+      "path": "assets/app-icon/pdfcraft.svg",
+      "mode": "100644",
+      "sha": "cfeb18025db7215d8873dfff38b51c0f6130fc5d"
+    },
+    {
+      "path": "docs/brand/ribbon-mark-dark.png",
+      "mode": "100644",
+      "sha": "7ad328e22363ac87fc17397eb4ae0cc0be73a0cb"
+    },
+    {
+      "path": "docs/brand/ribbon-mark-dark.svg",
+      "mode": "100644",
+      "sha": "e55cc4f85baec16be965201aed78c74e097b2cf6"
+    },
+    {
+      "path": "docs/brand/ribbon-mark-light.png",
+      "mode": "100644",
+      "sha": "de693b009aba0db00fa000847dcf9ee76fa9105f"
+    },
+    {
+      "path": "docs/brand/ribbon-mark-light.svg",
+      "mode": "100644",
+      "sha": "ec4264dd60fc3d34d3a95cc59c7e20015f2fddbe"
+    },
+    {
+      "path": "docs/brand/ribbon-mark-mono.png",
+      "mode": "100644",
+      "sha": "5d5a41893de6e7fca843033d7725171b577e7ff5"
+    },
+    {
+      "path": "docs/brand/ribbon-mark-mono.svg",
+      "mode": "100644",
+      "sha": "4f87e1e1a75bb694f0b8dc0ac9abb52f298f046d"
+    },
+    {
+      "path": "packaging/macos/dmg/background.svg",
+      "mode": "100644",
+      "sha": "c5534ac845bb061c3be21dc9e7d7af406129122f"
+    },
+    {
+      "path": "packaging/macos/dmg/background.tiff",
+      "mode": "100644",
+      "sha": "921dfae026a9cebacd6d9912eb713fa8bf0b5b9b"
+    },
+    {
+      "path": "packaging/macos/dmg/dmg-layout.DS_Store",
+      "mode": "100644",
+      "sha": "d2f321d5bf27ecbbe0564d4809bae79df2c99cd0"
+    }
+  ]
+}

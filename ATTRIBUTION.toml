@@ -2235,7 +2235,7 @@ author = "John Slegers"
 source = "https://github.com/jslegers/emoji-icon-font"
 licence = "MIT"
 kind = "font"
-usage = "Small special-icon subset embedded by egui default_fonts; retained in FontDefinitions::default(). Provenance: https://github.com/storytold/egui/blob/6d518fc799681571963842f95b55a6b68431b15a/crates/epaint_default_fonts/fonts/egui-icons.txt; complete MIT copyright and permission text in NOTICE."
+usage = "Small special-icon subset embedded by egui default_fonts; retained in FontDefinitions::default(). Provenance: https://github.com/storytold/egui/blob/725a39fca940f77149ffbb9c58eef405a16997bc/crates/epaint_default_fonts/fonts/egui-icons.txt; complete MIT copyright and permission text in NOTICE."
 sha256 = "122806555c73df7cef55aa1d945289ae27fbc4dbbd31abbb4204ee0cda829cc8"
 
 [[asset]]
@@ -3278,3 +3278,25 @@ kind = "logo"
 usage = "Independent fork branding; light, dark and monochrome appearances"
 sha256 = "eeab657a2bcc73d73abd426f322f62a374759dcc4dfce0ea3aea0f2aadf47cb3"
 
+
+[[asset]]
+path = "crates/ui-egui/src/i18n/fork/zh-hans.tsv"
+title = "Independent fork zh-hans UI translations"
+author = "Independent fork contributors"
+source = "this repository"
+licence = "MIT OR Apache-2.0"
+licence_file = "LICENSE-MIT"
+kind = "translation"
+usage = "Committed additions merged into the pinned craft-i18n app catalog at build time"
+sha256 = "e165f0b9d92ad7e92093920537f3bca7f623e151bdf53cbb7c1e2e542f030fec"
+
+[[asset]]
+path = "crates/ui-egui/src/i18n/fork/zh-hant.tsv"
+title = "Independent fork zh-hant UI translations"
+author = "Independent fork contributors"
+source = "this repository"
+licence = "MIT OR Apache-2.0"
+licence_file = "LICENSE-MIT"
+kind = "translation"
+usage = "Committed additions merged into the pinned craft-i18n app catalog at build time"
+sha256 = "99dda0f5c71ec6a05b42d7ed99855aef494b82dcfb9fd8cf06b9b941fdd10359"
